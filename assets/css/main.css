@@ -2682,6 +2682,12 @@ input, select, textarea {
 			vertical-align: middle;
 		}
 
+		@media screen and (max-width: 480px) {
+			ul.actions li:hide-mobile {
+				display: none;
+			}
+		}
+
 		ul.actions.special {
 			-moz-justify-content: center;
 			-webkit-justify-content: center;
