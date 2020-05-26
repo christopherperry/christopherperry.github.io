@@ -1,7 +1,7 @@
 {
-"companyName": "Nefarious Monkey Studios",
+"companyName": "Christopher Perry Gaming Company",
 "productName": "Snowy Mountains",
-"productVersion": "0.1",
+"productVersion": "1-beta",
 "dataUrl": "WebDemo.data.unityweb",
 "wasmCodeUrl": "WebDemo.wasm.code.unityweb",
 "wasmFrameworkUrl": "WebDemo.wasm.framework.unityweb",
