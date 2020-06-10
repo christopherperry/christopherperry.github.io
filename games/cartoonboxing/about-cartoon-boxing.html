@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Hello again. Long time no see. :)
+-->
+<html>
+
+<head>
+	<title>About - Cartoon Boxing</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-okaidia.min.css" />
+	<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<nav>
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="about-cartoon-boxing.html" class="active">About</a></li>
+				<li><a href="demo-cartoon-boxing.html">Play</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">Cartoon Boxing</h1>
+				<span class="image fit"><img src="../../images/cartoon-boxing-screenshot.png" alt="" /></span>
+
+				<h3>About</h3>
+				<p>Cartoon Boxing was built in a couple of days using free art I found on OpenGameArt.org <a
+						href="https://opengameart.org/users/segel">here</a>. Thanks Segel!</p>
+				<p>The project started as a Street Fighter 2 clone but I couldn't find a proper sprite sheet and I
+					didn't want to try to fix all of the sprite atlases I was able to find using Google, so I went with
+					what I could find with low effort.</p>
+
+				<h3>A Quick Experiment With Unity's New Input System</h3>
+				<p>The previous two projects I built in Unity used the <a
+						href="https://docs.unity3d.com/ScriptReference/Input.html">old input system</a>. I wanted some
+					experience with Unity's <a
+						href="https://blogs.unity3d.com/2019/10/14/introducing-the-new-input-system/">new input
+						system</a>, and I really wanted to know how to implement local multiplayer so I chose to build a
+					small game that would focus on user input and as a bonus learn how to add haptic feedback
+					(controller rumble).</p>
+
+				<pre><code class="language-csharp">private void OnPlayerJoined(PlayerInput playerInput)
+{
+    if (PlayerInputManager.instance.playerPrefab == redBoxerPrefab)
+    {
+        onRedPlayerJoin.Raise();
+    }
+    else if (PlayerInputManager.instance.playerPrefab == blueBoxerPrefab)
+    {
+        onBluePlayerJoin.Raise();
+    }
+				
+	PlayerInputManager.instance.playerPrefab = blueBoxerPrefab;
+}</code></pre>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="icons">
+				<li><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy Me a Coffee', '#29abe0', 'P5P11SX99');kofiwidget2.draw();</script> </li>
+				<li><a href="https://www.patreon.com/bePatron?u=36954666" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/jquery.scrollex.min.js"></script>
+	<script src="../../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-clike.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-csharp.min.js"></script>
+
+</body>
+
+</html>
