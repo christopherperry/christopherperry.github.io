@@ -49,21 +49,27 @@
 										<li>Block</li>
 									</ul>
 								</p>
-								<p>This is my ActionMap in the new input system:</p>
+								<p>Which resulted in me creating this ActionMap using the new input system:</p>
 								<span class="image"><img src="../../images/BoxingInputActions.png" alt="" /></span>
-								<p>The next step was configuring the input to support local multiplayer. To do this you add a <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@0.2/api/UnityEngine.InputSystem.Plugins.PlayerInput.PlayerInput.html">Player Input</a> component on your player GameObject.</p>
-								<p>Here's what mine looks like in Cartoon Boxing:</p>
+								<br>
+								<br>
+								<p>The next step was configuring the input to support local multiplayer. To do this you add a <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@0.2/api/UnityEngine.InputSystem.Plugins.PlayerInput.PlayerInput.html">Player Input</a> component on your player GameObject. <br>Here's what mine looks like in Cartoon Boxing:</p>
 								<span class="image"><img src="../../images/player-input.png" alt="" /></span>
 								<p>If you'll notice since I've chosen the <code>Send Messages</code> behavior the UI helpfully tells me that it will call functions named the same as my input actions, prepended with On: <code>OnLeftPunch()</code>, <code>OnRightPunch()</code>, <code>OnMove()</code>, and <code>OnBlock()</code></p>
-								<p>If you're familiar with the <a href="https://docs.unity3d.com/Manual/class-InputManager.html">InputManager</a> you may have written code something like this in one of your MonoBehavior classes:</p>
+								<p>Those of you that are familiar with the <a href="https://docs.unity3d.com/Manual/class-InputManager.html">InputManager</a> may have written code something like this in the MonoBehavior for a Cartoon Boxer:</p>
 								<pre><code class="language-csharp">void Update()
 {
 	horizontalInput = Input.GetAxis("Horizontal");
+	verticalInput = Input.GetAxis("Vertical");
 	bool pressedLeftPunch = Input.GetButtonDown("LeftPunch");
 	bool pressedRightPunch = Input.GetButtonDown("RightPunch");
 									
 	if (pressedLeftPunch) DoLeftPunch();
-	else if (pressedRightPunch) DoRightPunch();
+	else if (pressedRightPunch)
+	{
+		if (verticalInput == 1) DoUppercut();
+		else DoRightPunch();
+	}
 }
 									
 void FixedUpdate()
@@ -98,7 +104,18 @@ private void OnPunchRight(InputValue inputValue)
 		DoRightPunch();
 	}
 }</code></pre>
-								<p></p>
+								<br><br>
+								<p>As you can see it's much cleaner code, and definitely preferable to the old way of doing things.</p>
+								<p>The next step was to figure out how to allow players (max of 2 total) to join the game using whatever gamepad they happen to be using. Since I chose to use the generic <b>Gamepad</b> in my action bindings the general controller support was done. Onto player joining, and for this you can use the <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@0.2/api/UnityEngine.InputSystem.Plugins.PlayerInput.PlayerInputManager.html">PlayerInputManager</a>.</p>
+								<p>The first thing to know about this component is that it's a <b>Singleton</b></p>
+								<p>That's right... a <b>Singleton</b></p>
+								<span class="image"><img src="../../images/scream.gif" /></span>
+								<p><a href="http://misko.hevery.com/2008/08/17/singletons-are-pathological-liars/">1994 called, it wants it's pattern back.</a></p>
+								<p>When getting <i>the</i> instance in code you refer to the global variable <code>instance</code> on the PlayerInputManager.</p>
+								<p>In Cartoon Boxing I added a PlayerInputManager component to a GameObject and configured it to require the player to press the start button to join.</p>
+								<span class="image"><img src="../../images/PlayerInputManager.png" /></span>
+								<p>Notice that the component asks for a single prefab. Currently it seems to make the assumption each player will use the same prefab. That's definitely not what I wanted since I had two different boxers, one being red, the other blue.</p>
+								<p>To work around this I added another component which listens to the <code>OnPlayerJoined()</code> message from the PlayerInputManager. When a player joins I simply swap the <code>playerPrefab</code>. Here's all of the code for that:</p>
 								<pre><code class="language-csharp">using UnityEngine;
 using UnityEngine.InputSystem;
 									
@@ -124,13 +141,14 @@ public class PlayerInputManagerHelper : MonoBehaviour
 		PlayerInputManager.instance.playerPrefab = blueBoxerPrefab;
 	}
 }</code></pre>
-								<footer>
+								<p>If you're curious about the <code>GameEvent</code> usages here all I will say in this article is that adopting this pattern really helped keep my game code loosely coupled and made it way less confusing. I'll be writing about this pattern soon so stay tuned!</p>
+								<!-- <footer>
 									<ul class="stats">
 										<li><a href="#">General</a></li>
 										<li><a href="#" class="icon solid fa-heart">28</a></li>
 										<li><a href="#" class="icon solid fa-comment">128</a></li>
 									</ul>
-								</footer>
+								</footer> -->
 							</article>
 
 					</div>
