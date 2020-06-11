@@ -16,9 +16,43 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="../../index.html">Chris Makes Games</a></h1>
-					</header>
+				<header id="header">
+					<h1><a href="../../index.html">Chris Makes Games</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="../../index.html">Home</a></li>
+							<li><a href="../../games.html">My Games</a></li>
+						</ul>
+					</nav>
+					<nav class="main">
+						<ul>
+							<li class="menu">
+								<a class="fa-bars" href="#menu">Menu</a>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Menu -->
+				<section id="menu">
+
+					<!-- Links -->
+						<section>
+							<ul class="links">
+								<li>
+									<a href="../../index.html">
+										<h3>Home</h3>
+									</a>
+								</li>
+								<li>
+									<a href="../../games.html">
+										<h3>My Games</h3>
+									</a>
+								</li>
+							</ul>
+						</section>
+
+				</section>
 
 				<!-- Main -->
 					<div id="main">
@@ -31,7 +65,7 @@
 										<p>How I implemented local multiplayer in Cartoon Boxing.</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2020-06-10">June 06, 2020</time>
+										<time class="published" datetime="2020-06-10">June 10, 2020</time>
 										<a href="#" class="author"><span class="name">Chris Perry</span><img src="../../images/me-square.jpg" alt="" /></a>
 									</div>
 								</header>
@@ -142,13 +176,6 @@ public class PlayerInputManagerHelper : MonoBehaviour
 	}
 }</code></pre>
 								<p>If you're curious about the <code>GameEvent</code> usages here all I will say in this article is that adopting this pattern really helped keep my game code loosely coupled and made it way less confusing. I'll be writing about this pattern soon so stay tuned!</p>
-								<!-- <footer>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
-									</ul>
-								</footer> -->
 							</article>
 
 					</div>
