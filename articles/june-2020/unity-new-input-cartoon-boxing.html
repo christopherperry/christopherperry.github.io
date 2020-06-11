@@ -56,10 +56,9 @@
 								<span class="image"><img src="../../images/player-input.png" alt="" /></span>
 								<p>If you'll notice since I've chosen the <code>Send Messages</code> behavior the UI helpfully tells me that it will call functions named the same as my input actions, prepended with On: <code>OnLeftPunch()</code>, <code>OnRightPunch()</code>, <code>OnMove()</code>, and <code>OnBlock()</code></p>
 								<p>If you're familiar with the <a href="https://docs.unity3d.com/Manual/class-InputManager.html">InputManager</a> you may have written code something like this in one of your MonoBehavior classes:</p>
-								<pre><code class="language-csharp">
-void Update()
+								<pre><code class="language-csharp">void Update()
 {
-	horizontalInput = Input.GetButton("Horizontal");
+	horizontalInput = Input.GetAxis("Horizontal");
 	bool pressedLeftPunch = Input.GetButtonDown("LeftPunch");
 	bool pressedRightPunch = Input.GetButtonDown("RightPunch");
 									
@@ -70,16 +69,37 @@ void Update()
 void FixedUpdate()
 {
 	rigidbody.velocity = new Vector2(horizontalInput * movementSpeed, rigidbody.velocity.y);
+}</pre></code>
+								<br><br>
+								<p>Here's what the code looks like using the new input system in a Cartoon Boxer's MonoBehaviour (mostly):</p>
+								<pre><code class="language-csharp">private void OnMove(InputValue inputValue)
+{
+	movement = inputValue.Get&lt;Vector2&gt;();
 }
-								</pre></code>
-								<p>Here's what using the new input system looks like in Cartoon Boxing:</p>
-								<pre><code class="language-csharp">
-
-
-								</code></pre>
-								
-								<pre><code class="language-csharp">
-using UnityEngine;
+									
+private void OnBlock(InputValue inputValue)
+{
+	isBlocking = inputValue.isPressed;
+}
+									
+private void OnPunchLeft(InputValue inputValue)
+{
+	DoLeftPunch();
+}
+									
+private void OnPunchRight(InputValue inputValue)
+{
+	if (movement.y > 0)
+	{
+		DoUppercut();
+	}
+	else
+	{
+		DoRightPunch();
+	}
+}</code></pre>
+								<p></p>
+								<pre><code class="language-csharp">using UnityEngine;
 using UnityEngine.InputSystem;
 									
 public class PlayerInputManagerHelper : MonoBehaviour
@@ -103,8 +123,7 @@ public class PlayerInputManagerHelper : MonoBehaviour
 									
 		PlayerInputManager.instance.playerPrefab = blueBoxerPrefab;
 	}
-}
-								</code></pre>
+}</code></pre>
 								<footer>
 									<ul class="stats">
 										<li><a href="#">General</a></li>
