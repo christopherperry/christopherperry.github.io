@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Hi there.
+-->
+<html>
+	<head>
+		<title>Chris Makes Games</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-okaidia.min.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">Chris Makes Games</a></h1>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Working With Unity's New Input System</a></h2>
+										<p>How I implemented local multiplayer in Cartoon Boxing.</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2020-06-10">June 06, 2020</time>
+										<a href="#" class="author"><span class="name">Chris Perry</span><img src="../../images/me-square.jpg" alt="" /></a>
+									</div>
+								</header>
+								<span class="image featured"><img src="../../images/cartoon-boxing-screenshot.png" alt="" /></span>
+								<p>For my third project in Unity I wanted to move away from the legacy input system and move on to using the new input system. I thought it would be fun to create a multiplayer game and at the same time learn how to add controller support. As a bonus I would also learn how to add haptic feedback.</p>
+								<p>At first I was going to create a Street Fighter 2 clone using actual Street Fighter sprites I found doing a Google search, but what I found I couldn't make work because they weren't spaced properly. So, I went for whatever else I could find after searching free art on the web for fighting games.</p>
+								<p>After I had a gameplan (literally) I read Unity's blog post on the new input system (you can find that <a href="https://blogs.unity3d.com/2019/10/14/introducing-the-new-input-system/">here</a>). After importing all of the game sprites and setting up the game scene (it only has one scene) I started mapping out ActionMap I would use in the game.</p>
+								<p>The boxer sprites I found have only a few animations, which is fine since I only wanted to spend a couple days on this. Here's what I had to have inputs for:
+									<ul>
+										<li>Left Punch</li>
+										<li>Right Punch</li>
+										<li>Upwards Punch</li>
+										<li>Walk Forwards</li>
+										<li>Walk Backwards</li>
+										<li>Block</li>
+									</ul>
+								</p>
+								<p>This is my ActionMap in the new input system:</p>
+								<span class="image"><img src="../../images/BoxingInputActions.png" alt="" /></span>
+								<p>The next step was configuring the input to support local multiplayer. To do this you add a <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@0.2/api/UnityEngine.InputSystem.Plugins.PlayerInput.PlayerInput.html">Player Input</a> component on your player GameObject.</p>
+								<p>Here's what mine looks like in Cartoon Boxing:</p>
+								<span class="image"><img src="../../images/player-input.png" alt="" /></span>
+								<p>If you'll notice since I've chosen the <code>Send Messages</code> behavior the UI helpfully tells me that it will call functions named the same as my input actions, prepended with On: <code>OnLeftPunch()</code>, <code>OnRightPunch()</code>, <code>OnMove()</code>, and <code>OnBlock()</code></p>
+								<p>If you're familiar with the <a href="https://docs.unity3d.com/Manual/class-InputManager.html">InputManager</a> you may have written code something like this in one of your MonoBehavior classes:</p>
+								<pre><code class="language-csharp">
+void Update()
+{
+	horizontalInput = Input.GetButton("Horizontal");
+	bool pressedLeftPunch = Input.GetButtonDown("LeftPunch");
+	bool pressedRightPunch = Input.GetButtonDown("RightPunch");
+									
+	if (pressedLeftPunch) DoLeftPunch();
+	else if (pressedRightPunch) DoRightPunch();
+}
+									
+void FixedUpdate()
+{
+	rigidbody.velocity = new Vector2(horizontalInput * movementSpeed, rigidbody.velocity.y);
+}
+								</pre></code>
+								<p>Here's what using the new input system looks like in Cartoon Boxing:</p>
+								<pre><code class="language-csharp">
+
+
+								</code></pre>
+								
+								<pre><code class="language-csharp">
+using UnityEngine;
+using UnityEngine.InputSystem;
+									
+public class PlayerInputManagerHelper : MonoBehaviour
+{
+    public GameObject redBoxerPrefab;
+    public GameObject blueBoxerPrefab;
+									
+    public GameEvent onRedPlayerJoin;
+    public GameEvent onBluePlayerJoin;
+									
+    private void OnPlayerJoined(PlayerInput playerInput)
+    {
+        if (PlayerInputManager.instance.playerPrefab == redBoxerPrefab)
+		{
+			onRedPlayerJoin.Raise();
+		}
+		else if (PlayerInputManager.instance.playerPrefab == blueBoxerPrefab)
+		{
+			onBluePlayerJoin.Raise();
+		}
+									
+		PlayerInputManager.instance.playerPrefab = blueBoxerPrefab;
+	}
+}
+								</code></pre>
+								<footer>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/mrchristopherperry/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:ChrisMakesVideoGames@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://stackoverflow.com/users/413414/christopher-perry" class="icon brands fa-stack-overflow"><span class="label">Stack Overflow</span></a></li>
+							<li><a href="https://github.com/christopherperry" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.patreon.com/ChrisMakesVideoGames?fan_landing=true" class="icon brands fa-patreon"><span class="label">Patreon</span></a></li>
+						</ul>
+						<p class="copyright">&copy;ChrisMakesGames</p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-clike.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-csharp.min.js"></script>
+
+	</body>
+</html>
