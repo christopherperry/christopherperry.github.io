@@ -3,252 +3,297 @@
 	My games page.
 -->
 <html>
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169217216-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-		
-			gtag('config', 'UA-169217216-1');
-		</script>
 
-		<title>Chris Makes Games</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169217216-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		gtag('config', 'UA-169217216-1');
+	</script>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Chris Makes Games</a></h1>
-						<nav class="links">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="games.html">My Games</a></li>
-							</ul>
-						</nav>
-						<nav class="main">
-							<ul>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
+	<title>Chris Makes Games</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-					<!-- Menu -->
-					<section id="menu">
+<body class="is-preload">
 
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="index.html">
-											<h3>Home</h3>
-										</a>
-									</li>
-									<li>
-										<a href="games.html">
-											<h3>My Games</h3>
-										</a>
-									</li>
-								</ul>
-							</section>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-					</section>
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Chris Makes Games</a></h1>
+			<nav class="links">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="games.html">My Games</a></li>
+				</ul>
+			</nav>
+			<nav class="main">
+				<ul>
+					<li class="menu">
+						<a class="fa-bars" href="#menu">Menu</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-				<!-- Main -->
-					<div id="main">
+		<!-- Menu -->
+		<section id="menu">
 
-						<!-- Game - Snowy Mountains -->
-						<article class="post">
-							<header>
-								<div class="title">
-									<h2><a href="games/snowymountains/demo-snowy-mountains.html">Snowy Mountains</a></h2>
-									<p>A 2D Adventure Game with Platforming Elements</p>
-								</div>
-								<div class="meta">
-									<time class="published" datetime="2020-04-08">April 04, 2020</time>
-									<a href="#" class="author"><span class="name">Chris Perry</span><img src="images/me-square.jpg" alt="" /></a>
-								</div>
-							</header>
-							<a href="games/snowymountains/demo-snowy-mountains.html" class="image featured"><img src="images/snowy-mountains.gif" alt="" /></a>
-							<p>This was my 1st-ish project in Unity. I went a little overboard.</p>
-							<p>In this project I:</p>
-							<ul>
-								<li>Made a platformer player character</li>
-								<li>Implemented varied jump height</li>
-								<li>Implemented wall jumping / sliding</li>
-								<li>Implemented player dash ability</li>
-								<li>Created UI and some basic menus</li>
-								<li>Saved game state in the file system</li>
-								<li>Read input from the user</li>
-								<li>Detected and resolve collisions</li>
-								<li>Created several particle effects</li>
-								<li>Created an infinite background</li>
-								<li>Made the background layers Parallax adding depth</li>
-								<li>Used layers for collisions</li>
-								<li>Used multiple cameras and basic transitions</li>
-								<li>Created camera shake for gameplay impact</li>
-								<li>Used sorting layers to achieve depth in a 2D enivronment</li>
-								<li>Used 3D audio</li>
-								<li>Manipulated game audio during player injury events</li>
-								<li>Manipulated time during player injury events</li>
-								<li>Transitioned/Crossfaded audio between areas of a level</li>
-								<li>Spawned the player at spawn points</li>
-								<li>Created Projectiles</li>
-								<li>Designed the level myself</li>
-								<li>Designed and created a boss battle</li>
-								<li>Used Tilemaps and tilemap collisions</li>
-								<li>Made custom tilemaps collision shapes</li>
-								<li>Used sprite animation</li>
-								<li>Animated character collider attributes</li>
-								<li>Made a Credits screen</li>
-								<li>Used the A* Pathfinding project for an enemy and a collectable</li>
-								<li>Created a state machine system that should probably become a library (hmmm... blog post?)</li>
-								<li>Other stuff I'm probably forgetting right now</li>
-							</ul>
-							<footer>
-								<ul class="actions">
-									<li><a href="games/snowymountains/demo-snowy-mountains.html" class="button large">Play</a></li>
-									<li><a href="https://www.youtube.com/watch?v=WyOrpCnBzF4" class="button large">Watch Gameplay</a></li>
-								</ul>
-							</footer>
-						</article>
+			<!-- Links -->
+			<section>
+				<ul class="links">
+					<li>
+						<a href="index.html">
+							<h3>Home</h3>
+						</a>
+					</li>
+					<li>
+						<a href="games.html">
+							<h3>My Games</h3>
+						</a>
+					</li>
+				</ul>
+			</section>
 
-						<!-- Game - Froggy Bros -->
-						<article class="post">
-							<header>
-								<div class="title">
-									<h2><a href="games/froggybros/demo-froggybros.html">Froggy Bros</a></h2>
-									<p>A mario clone, adding some platformer gameplay best practices</p>
-								</div>
-								<div class="meta">
-									<time class="published" datetime="2020-06-10">June 06, 2020</time>
-									<a href="#" class="author"><span class="name">Chris Perry</span><img src="images/me-square.jpg" alt="" /></a>
-								</div>
-							</header>
-							<a href="games/froggybros/demo-froggybros.html" class="image featured"><img src="images/froggy-bros.gif" alt="" /></a>
-							<p>This was my 2nd-ish project in Unity. I actually started the character controller for the little froggy dude before Snowy Mountains. I also coded all of the traps and started level building but wasn't happy with the lack of breadth in the tileset so I scoured <a href="itch.io">itch.io</a> and ended up paying for the tileset you see in Snow Mountains.</p>
-							<p>Since I wasn't entirely happy with the menus I created in Snowy Mountains I decided to one-up that project's menus in this one.</p>
-							<p>In this project I:</p>
-							<ul>
-								<li>Created 3 levels with various traps and gameplay elements</li>
-								<li>Implemented <a href="https://bit.ly/2UzxqIN">Coyote Time</a> for better jump feel</li>
-								<li>Made spikes only harm the player if the player is moving into the spikes</li>
-								<li>Detected the player being crushed by objects</li>
-								<li>Animated coin boxes from scratch using Unity's record functionality in the animator</li>
-								<li>Used the new input system</li>
-								<li>Used <b>Scriptable Objects</b> in the <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk">game architecture</a> (game changer, literally!)</li>
-								<li>Manipulated time during various games events</li>
-								<li>Made enemy and player deaths resemble Mario Bros</li>
-								<li>Created menus that work with the controller</li>
-								<li>Again probably leaving some things out I can't remember</li>
-							</ul>
-							<footer>
-								<ul class="actions">
-									<li><a href="games/froggybros/demo-froggybros.html" class="button large">Play</a></li>
-								</ul>
-							</footer>
-						</article>
+		</section>
 
-						<!-- Game - Cartoon Boxing -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="games/cartoonboxing/demo-cartoon-boxing.html">Cartoon Boxing</a></h2>
-										<p>A local multiplayer Boxing game with haptic feedback.</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2020-06-10">June 06, 2020</time>
-										<a href="#" class="author"><span class="name">Chris Perry</span><img src="images/me-square.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="games/cartoonboxing/demo-cartoon-boxing.html" class="image featured"><img src="images/cartoon-boxing.gif" alt="" /></a>
-								<p>This was my 3rd project in Unity. It was meant to be a quick project with the sole purpose of learning Unity's new input system. The whole thing took me less than 3 days to implement.</p>
-								<p>In this project I:</p>
-								<ul>
-									<li>Used Unity's new input system</li>
-									<li>Made the game multiplayer</li>
-									<li>Supported multiple gamepads</li>
-									<li>Used <b>Scriptable Objects</b> in the <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk">game architecture</a></li>
-									<li>Added controller rumble</li>
-									<li>Used tilemaps, animations, and other things I learned in the last two projects.</li>
-								</ul>
-								<footer>
-									<ul class="actions">
-										<li><a href="games/cartoonboxing/demo-cartoon-boxing.html" class="button large">Play</a></li>
-									</ul>
-								</footer>
-							</article>
+		<!-- Main -->
+		<div id="main">
 
+			<!-- Game - Snowy Mountains -->
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2><a href="games/snowymountains/demo-snowy-mountains.html">Snowy Mountains</a></h2>
+						<p>A 2D Adventure Game with Platforming Elements</p>
 					</div>
+					<div class="meta">
+						<time class="published" datetime="2020-04-08">April 04, 2020</time>
+						<a href="#" class="author"><span class="name">Chris Perry</span><img src="images/me-square.jpg"
+								alt="" /></a>
+					</div>
+				</header>
+				<a href="games/snowymountains/demo-snowy-mountains.html" class="image featured"><img
+						src="images/snowy-mountains.gif" alt="" /></a>
+				<p>This was my 1st-ish project in Unity. I went a little overboard.</p>
+				<p>In this project I implemented:</p>
+				<ul>
+					<li><b>Player:</b></li>
+					<ul>
+						<li>Varied jump height</li>
+						<li>Wall jumping/sliding</li>
+						<li>Dashing</li>
+						<li>Varied attacks</li>
+						<li>Input via the keyboard and gamepads</li>
+					</ul>
+					<li><b>Enemies:</b></li>
+					<ul>
+						<li>Pathfinding using the A* Pathfinding Project</li>
+						<li>Projectiles</li>
+						<li>Pacing AI</li>
+						<li>Attack AI</li>
+					</ul>
+					<li><b>All Game Characters:</b></li>
+					<ul>
+						<li>Health System</li>
+						<li>Death Animations</li>
+						<li>Collisions</li>
+					</ul>
+					<li><b>Game World:</b></li>
+					<ul>
+						<li>Checkpoint / Spawn System</li>
+						<li>Parallaxing Infinite Backgrounds</li>
+						<li>Weather System (snow)</li>
+						<li>Camera Shake</li>
+						<li>Camera Transtions</li>
+						<li>Audio Transtitions</li>
+					</ul>
+					<li><b>UI and Tools:</b></li>
+					<ul>
+						<li>Game Menus</li>
+						<li>Scrolling End Credits</li>
+						<li>State Machine API (will separate as a library later)</li>
+					</ul>
+					<li><b>Game Design:</b></li>
+					<ul>
+						<li>Planned and designed all levels</li>
+						<li>Planned and designed the boss battle</li>
+						<li>Planned and designed game audio</li>
+					</ul>
+				</ul>
+				<footer>
+					<ul class="actions">
+						<li><a href="games/snowymountains/demo-snowy-mountains.html" class="button large">Play</a></li>
+						<li><a href="https://www.youtube.com/watch?v=WyOrpCnBzF4" class="button large">Watch
+								Gameplay</a></li>
+					</ul>
+				</footer>
+			</article>
 
-				<!-- Sidebar -->
-					<section id="sidebar">
+			<!-- Game - Froggy Bros -->
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2><a href="games/froggybros/demo-froggybros.html">Froggy Bros</a></h2>
+						<p>A mario clone, adding some platformer gameplay best practices</p>
+					</div>
+					<div class="meta">
+						<time class="published" datetime="2020-06-10">June 06, 2020</time>
+						<a href="#" class="author"><span class="name">Chris Perry</span><img src="images/me-square.jpg"
+								alt="" /></a>
+					</div>
+				</header>
+				<a href="games/froggybros/demo-froggybros.html" class="image featured"><img src="images/froggy-bros.gif"
+						alt="" /></a>
+				<p>This was my 2nd-ish project in Unity. I actually started the character controller for the little
+					froggy dude before Snowy Mountains. I also coded all of the traps and started level building but
+					wasn't happy with the lack of breadth in the tileset so I scoured <a href="itch.io">itch.io</a> and
+					ended up paying for the tileset you see in Snow Mountains.</p>
+				<p>Since I wasn't entirely happy with the menus I created in Snowy Mountains I decided to one-up that
+					project's menus in this one.</p>
+				<p>In this project I:</p>
+				<ul>
+					<li>Created 3 levels with various traps and gameplay elements</li>
+					<li>Implemented <a href="https://bit.ly/2UzxqIN">Coyote Time</a> for better jump feel</li>
+					<li>Made spikes only harm the player if the player is moving into the spikes</li>
+					<li>Detected the player being crushed by objects</li>
+					<li>Animated coin boxes from scratch using Unity's record functionality in the animator</li>
+					<li>Used the new input system</li>
+					<li>Used <b>Scriptable Objects</b> in the <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk">game
+							architecture</a> (game changer, literally!)</li>
+					<li>Manipulated time during various games events</li>
+					<li>Made enemy and player deaths resemble Mario Bros</li>
+					<li>Created menus that work with the controller</li>
+					<li>Again probably leaving some things out I can't remember</li>
+				</ul>
+				<footer>
+					<ul class="actions">
+						<li><a href="games/froggybros/demo-froggybros.html" class="button large">Play</a></li>
+					</ul>
+				</footer>
+			</article>
 
-						<!-- Intro -->
-							<section id="intro">
-								<a href="#" class="logo"><img src="images/gamer-mascot.jpg" alt="" /></a>
-								<header>
-									<h2>Chris Makes Games</h2>
-									<p>Game developer at large.</p>
-								</header>
-							</section>
+			<!-- Game - Cartoon Boxing -->
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2><a href="games/cartoonboxing/demo-cartoon-boxing.html">Cartoon Boxing</a></h2>
+						<p>A local multiplayer Boxing game with haptic feedback.</p>
+					</div>
+					<div class="meta">
+						<time class="published" datetime="2020-06-10">June 06, 2020</time>
+						<a href="#" class="author"><span class="name">Chris Perry</span><img src="images/me-square.jpg"
+								alt="" /></a>
+					</div>
+				</header>
+				<a href="games/cartoonboxing/demo-cartoon-boxing.html" class="image featured"><img
+						src="images/cartoon-boxing.gif" alt="" /></a>
+				<p>This was my 3rd project in Unity. It was meant to be a quick project with the sole purpose of
+					learning Unity's new input system. The whole thing took me less than 3 days to implement.</p>
+				<p>In this project I:</p>
+				<ul>
+					<li>Used Unity's new input system</li>
+					<li>Made the game multiplayer</li>
+					<li>Supported multiple gamepads</li>
+					<li>Used <b>Scriptable Objects</b> in the <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk">game
+							architecture</a></li>
+					<li>Added controller rumble</li>
+					<li>Used tilemaps, animations, and other things I learned in the last two projects.</li>
+				</ul>
+				<footer>
+					<ul class="actions">
+						<li><a href="games/cartoonboxing/demo-cartoon-boxing.html" class="button large">Play</a></li>
+					</ul>
+				</footer>
+			</article>
 
-						<!-- Posts List - Short links to blog posts -->
-							<section>
-								<ul class="posts">
-									<li>
-										<article>
-											<header>
-												<h3><a href="articles/june-2020/unity-new-input-cartoon-boxing.html">Working with Unity's new Input System</a></h3>
-												<time class="published" datetime="2020-06-10">June 10, 2020</time>
-											</header>
-											<a href="articles/june-2020/unity-new-input-cartoon-boxing.html" class="image"><img src="images/cartoon-boxing-screenshot.png" alt="" /></a>
-										</article>
-									</li>
-								</ul>
-							</section>
+		</div>
 
-						<!-- About -->
-							<section class="blurb">
-								<h2>About Me</h2>
-								<p>Hi, I'm Chris. I'm a self taught game developer from Southern California. I share what I know to help readers like you. My site has no ads or sponsors. If you enjoy my content please consider supporting my work.</p>
-								<ul class="actions">
-								<li><a href='https://www.patreon.com/bePatron?u=36954666' target='_blank' style='border-bottom:none'><img height='40' style='border:0px;height:40px;border-radius:7px;' src='images/become_a_patron_button@2x.png' border='0' alt='Support me on Patreon!' /></a></li>
-									<li><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy Me a Coffee', '#2ebaae', 'P5P11SX99');kofiwidget2.draw();</script></li>
-								</ul>
-							</section>
+		<!-- Sidebar -->
+		<section id="sidebar">
 
-						<!-- Footer -->
-							<section id="footer">
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/mrchristopherperry/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="mailto:ChrisMakesVideoGames@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-									<li><a href="https://stackoverflow.com/users/413414/christopher-perry" class="icon brands fa-stack-overflow"><span class="label">Stack Overflow</span></a></li>
-									<li><a href="https://github.com/christopherperry" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									<li><a href="https://www.patreon.com/ChrisMakesVideoGames?fan_landing=true" class="icon brands fa-patreon"><span class="label">Patreon</span></a></li>
-								</ul>
-								<p class="copyright">&copy;ChrisMakesGames</p>
-							</section>
+			<!-- Intro -->
+			<section id="intro">
+				<a href="#" class="logo"><img src="images/gamer-mascot.jpg" alt="" /></a>
+				<header>
+					<h2>Chris Makes Games</h2>
+					<p>Game developer at large.</p>
+				</header>
+			</section>
 
-					</section>
+			<!-- Posts List - Short links to blog posts -->
+			<section>
+				<ul class="posts">
+					<li>
+						<article>
+							<header>
+								<h3><a href="articles/june-2020/unity-new-input-cartoon-boxing.html">Working with
+										Unity's new Input System</a></h3>
+								<time class="published" datetime="2020-06-10">June 10, 2020</time>
+							</header>
+							<a href="articles/june-2020/unity-new-input-cartoon-boxing.html" class="image"><img
+									src="images/cartoon-boxing-screenshot.png" alt="" /></a>
+						</article>
+					</li>
+				</ul>
+			</section>
 
-			</div>
+			<!-- About -->
+			<section class="blurb">
+				<h2>About Me</h2>
+				<p>Hi, I'm Chris. I'm a self taught game developer from Southern California. I share what I know to help
+					readers like you. My site has no ads or sponsors. If you enjoy my content please consider supporting
+					my work.</p>
+				<ul class="actions">
+					<li><a href='https://www.patreon.com/bePatron?u=36954666' target='_blank'
+							style='border-bottom:none'><img height='40'
+								style='border:0px;height:40px;border-radius:7px;'
+								src='images/become_a_patron_button@2x.png' border='0'
+								alt='Support me on Patreon!' /></a></li>
+					<li>
+						<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
+						<script
+							type='text/javascript'>kofiwidget2.init('Buy Me a Coffee', '#2ebaae', 'P5P11SX99'); kofiwidget2.draw();</script>
+					</li>
+				</ul>
+			</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/mrchristopherperry/" class="icon brands fa-linkedin"><span
+								class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:ChrisMakesVideoGames@gmail.com" class="icon solid fa-envelope"><span
+								class="label">Email</span></a></li>
+					<li><a href="https://stackoverflow.com/users/413414/christopher-perry"
+							class="icon brands fa-stack-overflow"><span class="label">Stack Overflow</span></a></li>
+					<li><a href="https://github.com/christopherperry" class="icon brands fa-github"><span
+								class="label">Github</span></a></li>
+					<li><a href="https://www.patreon.com/ChrisMakesVideoGames?fan_landing=true"
+							class="icon brands fa-patreon"><span class="label">Patreon</span></a></li>
+				</ul>
+				<p class="copyright">&copy;ChrisMakesGames</p>
+			</section>
 
-	</body>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
